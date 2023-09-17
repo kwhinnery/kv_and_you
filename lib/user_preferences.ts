@@ -62,7 +62,7 @@ export async function getPreferencesByEmail(
   if (engine === Engine.DynamoDB) {
     // TODO
   } else if (engine === Engine.Redis) {
-    return await DenoKV.getPreferencesByEmail(email);
+    return await Redis.getPreferencesByEmail(email);
   }
 
   return await DenoKV.getPreferencesByEmail(email);

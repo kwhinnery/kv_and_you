@@ -3,7 +3,13 @@ import { UserPreferences } from "./user_preferences.ts";
 
 // Connect to local redis
 const client = createClient();
-await client.connect();
+
+try {
+  await client.connect();
+} catch {
+  console.warn("WARNING: Could not connect to local Redis.");
+  console.warn("Redis storage engine will be unavailable.");
+}
 
 export async function storePreferences(
   prefs: UserPreferences,
