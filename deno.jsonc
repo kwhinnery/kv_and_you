@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    // Default - run with Deno KV - "deno task run"
+    "run": "export KV_STORAGE_ENGINE=deno && deno run -A --unstable --watch server.tsx",
+    // Run with redis - "deno task run_redis"
+    "run_redis": "export KV_STORAGE_ENGINE=redis && deno run -A --unstable --watch server.tsx"
+  }
+}
