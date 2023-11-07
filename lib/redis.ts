@@ -53,7 +53,7 @@ export async function getPreferencesByEmail(
   const res1 = await client.get(secondaryKey);
 
   // If no secondary key exists, bail early
-  if (!res1.value) {
+  if (!res1) {
     return null;
   }
 
